@@ -16,8 +16,7 @@ a useful debugger for mobile
 2. 打开example/demo.html
 3. 操作按钮进行使用
 
-![image](https://github.com/ghking1/mdebug/raw/master/example/demo1.jpg)
-![image](https://github.com/ghking1/mdebug/raw/master/example/demo2.jpg)
+![image](https://github.com/ghking1/mdebug/raw/master/example/demo.jpg)
 
 ## 快速入门
 
