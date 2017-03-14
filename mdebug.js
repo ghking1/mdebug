@@ -84,28 +84,28 @@ window.mdebug.window_onload=function()
         '     </div>                                                                                                                                                          ' +
         '     <hr style="height: 0px; border-top: 0px; border-bottom: 1px solid #BBBBBB" />                                                                                   ' +
         '     <div id="mdebug_mess" style="width: 100%; height: 300px; -ms-word-break: break-all; word-break: break-all; overflow: auto"></div>                               ' +
-        '     <div>                                                                                                                     ' +
-        '         <input id="mdebug_cmd" type="text" value=""                                                                           ' +
-        '                style="margin:0px; border: 1px solid #999999; padding:5px 5px; width: 80%; font-size: 16px;                    ' +
-        '                -webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box; float: left;" />            ' +
-        '         <button onclick="window.mdebug.execute()"                                                                             ' +
-        '                 style="margin: 0px; border: 1px solid #999999; border-left:none; padding:5px 20px; width:20%; font-size: 16px;' +
-        '                 -webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box; float: left;               ' +
-        '                 background-color: #DDDDDD;">execute</button>                                                                  ' +
-        '     </div>                                                                                                                    ' +
+        '     <div>                                                                                                                                                           ' +
+        '         <input id="mdebug_cmd" type="text" value=""                                                                                                                 ' +
+        '                style="margin:0px; border: 1px solid #999999; padding:5px 5px; width: 80%; font-size: 16px;                                                          ' +
+        '                -webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box; float: left;" />                                                  ' +
+        '         <button onclick="window.mdebug.execute()"                                                                                                                   ' +
+        '                 style="margin: 0px; border: 1px solid #999999; border-left:none; padding:5px 20px; width:20%; font-size: 16px;                                      ' +
+        '                 -webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box; float: left;                                                     ' +
+        '                 background-color: #DDDDDD;">execute</button>                                                                                                        ' +
+        '     </div>                                                                                                                                                          ' +
         ' </div>                                                                                                                                                              ' ;
     window.mdebug.mdebug_div=window.mdebug.create_element(mdebug_html);
     window.mdebug.mdebug_mess=window.mdebug.mdebug_div.querySelector('#mdebug_mess');
     document.body.insertBefore(window.mdebug.mdebug_div, document.body.firstChild);
 
     var mbug_html=''+
-        ' <div onclick="window.mdebug.show()"                                      ' +
-        '      style="display: table; position: absolute; top: 200px; right: 30px; ' +
-        '             border-radius: 50%; width: 60px; height: 60px;               ' +
-        '             line-height: 60px; text-align: center;                       ' +
-        '             background-color: #008800; cursor: pointer">                 ' +
-        '     <span style="color: #ffffff; font-size: 16px">mbug</span>            ' +
-        ' </div>                                                                   ' ;
+        ' <div onclick="window.mdebug.show()"                                            ' +
+        '      style="position: absolute; top: 200px; right: 30px; z-index: 2147483647;  ' +  //z-index set to max number, so it can always display on the top
+        '             border-radius: 50%; width: 60px; height: 60px;                     ' +
+        '             line-height: 60px; text-align: center;                             ' +
+        '             background-color: #008800; cursor: pointer">                       ' +
+        '     <span style="color: #ffffff; font-size: 16px">mbug</span>                  ' +
+        ' </div>                                                                         ' ;
     document.body.insertBefore(window.mdebug.create_element(mbug_html), document.body.firstChild);
 };
 
