@@ -32,6 +32,7 @@ window.onerror=function(mess, url, line){
 
 window.mdebug.log=function(mess)
 {
+    window.mdebug.console_log(mess);
     window.mdebug.mess+=mess+'<br/>';
     if(window.mdebug.mdebug_div!=null && window.mdebug.mdebug_div.style.display=='block')
     {
@@ -39,6 +40,12 @@ window.mdebug.log=function(mess)
         window.mdebug.mdebug_mess.scrollTop=window.mdebug.mdebug_mess.scrollHeight-window.mdebug.mdebug_mess.clientHeight;
     }
 };
+//redirect console.log function to window.mdebug.log
+//also we saved primitive console.log in window.mdebug.console_log, we will call it in window.mdebug.log
+if(console){
+    window.mdebug.console_log=console.log;
+    console.log=window.mdebug.log;
+}
 
 window.mdebug.clear=function()
 {

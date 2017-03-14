@@ -24,9 +24,9 @@ a useful debugger for mobile
 
 ## API详解
 
-1. mdebug.log()
+1. mdebug.log() 或者 console.log()
     
-    输出调试信息，就像chrome浏览器的cosole.log()一样，只不过这里是输出到我们的调试窗口
+    输出调试信息，就像chrome浏览器的cosole.log()一样，只不过这里是输出到我们的调试窗口，同时也会输出到控制台。
 
 ## 注意事项
 
