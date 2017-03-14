@@ -3,7 +3,7 @@ a useful debugger for mobile
 
 ## 使用情景
 
-移动端浏览器不方便调试，使用该插件可以快速定位发生错误的位置，输出调试信息
+移动端浏览器不方便调试，使用该插件可以快速定位发生错误的位置，输出调试信息，交互执行js代码。
 
 ## 特色
 
@@ -21,14 +21,13 @@ a useful debugger for mobile
 ## 快速入门
 
 1. 引入脚本\<script type="text/javascript" src="../clipimg.js"\>\</script\>
-2. 显示调试窗口mdebug.show()
 
 ## API详解
 
-1. mdebug.show()
-
-    显示调试窗口
-
-2. mdebug.log()
+1. mdebug.log()
     
     输出调试信息，就像chrome浏览器的cosole.log()一样，只不过这里是输出到我们的调试窗口
+
+## 注意事项
+
+1. 请尽量在其他代码引入之前引入该插件，方便mdebug捕获错误。
