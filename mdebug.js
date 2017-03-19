@@ -30,17 +30,8 @@ window.mdebug={
         }
     },
 
-    console_log: (function(){   //we keep console.log function in mdebug.console_log, because we will redirect console.log to mdebug.log later
-        if(console){
-            return console.log
-        }
-        else{
-            return function(){};
-        }
-    })(),
-
     log: function(mess) {   //it append mess to this.mess
-        this.mess+=mess+'<br/>';
+        this.mess += mess+'<br/>';
         if(this.mdebug_div!=null && this.mdebug_div.style.display=='block') //it mdebug window is displayed in block, then update the mdebug_mess element
         {
             this.mdebug_mess.innerHTML=this.mess;
@@ -48,6 +39,7 @@ window.mdebug={
         }
         if(console)
         {
+            //this.console_log is console.log, which we set later
             //here we must use call to change it's context, because console.log must run in console context
             this.console_log.call(console, mess);
         }
@@ -129,7 +121,10 @@ window.mdebug={
     //also we saved primitive console.log in mdebug.console_log, we will call it in mdebug.log
     if(console)
     {
-        console.log=mdebug.log;
+        mdebug.console_log=console.log;
+        //here we must wrap mdebug.log in a function
+        //console.log=consloe.log; this is wrong, because when we call console.log, the log's this point point to console, bu we need mdebug as it's point
+        console.log=function(mess){mdebug.log( mess)};
     }
 
     //catch all error, and handle it in onerror function
