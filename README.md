@@ -20,7 +20,7 @@ a useful debugger for mobile
 
 ## 快速入门
 
-1. 引入脚本\<script type="text/javascript" src="../clipimg.js"\>\</script\>
+1. 引入脚本\<script type="text/javascript" src="../mdebug.js"\>\</script\>
 
 ## API详解
 
