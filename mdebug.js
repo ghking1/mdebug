@@ -108,13 +108,27 @@ window.mdebug={
         document.body.insertBefore(create_element(mbug_html), document.body.firstChild);
     }
 
+    //this function print error message to mdebug window
+    function window_onerror(event)
+    {
+        if(event.target==window){
+            mdebug.log('error in ' + event.filename + ', line:' + event.lineno + ' :: ' + event.message);
+        }
+        else{
+            mdebug.log('cann\'t find :: ' + event.target.src);
+        }
+    }
+
     //listen onload event
     if(window.addEventListener){
         window.addEventListener('load', window_onload, false);
+        window.addEventListener('error', window_onerror, true);
     }else if(window.attachEvent){
         window.attachEvent('onload', window_onload);
+        window.attachEvent('error', window_onerror);
     }else{
         window.onload=window_onload;
+        window.onerror=window_onerror;
     }
 
     //redirect console.log function to mdebug.log
@@ -128,9 +142,6 @@ window.mdebug={
     }
 
     //catch all error, and handle it in onerror function
-    window.onerror=function(mess, url, line){
-        mdebug.log(mess.toString()+': '+url+': '+line);
-    };
 
 })();
 
